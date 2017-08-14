@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500");
+.title {
+  text-align: center;
+  font-family: 'Raleway', sans-serif; }
+
+.reminder-app {
+  width: 620px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Helvetica; }
+  .reminder-app .add-reminder {
+    padding: 5px; }
+    .reminder-app .add-reminder form input {
+      border-radius: 4px;
+      border: 1px solid #aaa;
+      vertical-align: middle;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      padding: 5px;
+      font-size: 1em;
+      margin: 5px 3px; }
+    .reminder-app .add-reminder form input:focus {
+      outline: none; }
+    .reminder-app .add-reminder form input[type="text"]:placeholder {
+      font-size: 1em; }
+    .reminder-app .add-reminder form input[type="datetime-local"] {
+      color: #444;
+      padding: 4.75px;
+      font-size: 0.8em; }
+    .reminder-app .add-reminder form input[type="submit"] {
+      background-color: #449D44;
+      border: none;
+      font-size: 0.82em;
+      padding: 0.6em;
+      cursor: pointer;
+      color: white; }
+    .reminder-app .add-reminder form input[type="submit"]:hover {
+      background-color: #54aD54; }
+  .reminder-app .reminder-list {
+    padding-top: 40px; }
+    .reminder-app .reminder-list .reminder {
+      font-size: 1em;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-height: 55px;
+      box-sizing: border-box; }
+      .reminder-app .reminder-list .reminder > div {
+        padding: 3px 20px; }
+        .reminder-app .reminder-list .reminder > div small > em {
+          font-size: 14px; }
+      .reminder-app .reminder-list .reminder .close {
+        float: right;
+        margin: 0;
+        padding: 5px 8px; }
+        .reminder-app .reminder-list .reminder .close small {
+          cursor: pointer; }
+    .reminder-app .reminder-list .reminder:hover {
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2); }
+  .reminder-app button[value="clear-all"] {
+    border: 1px solid red;
+    font-size: 0.82em;
+    padding: 0.6em;
+    background-color: #C9302C;
+    color: white;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box;
+    margin: 10px;
+    cursor: pointer; }
+  .reminder-app button[value="clear-all"]:hover {
+    background-color: #d9403c; }
+
+@media only screen and (max-width: 650px) {
+  .reminder-app {
+    width: 98%;
+    padding: 0;
+    margin: 0; }
+    .reminder-app .add-reminder {
+      padding: 0; }
+      .reminder-app .add-reminder form > input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px; }
+    .reminder-app .reminder-list {
+      width: 350px;
+      margin: 0 auto; }
+      .reminder-app .reminder-list .reminder {
+        width: 100%; }
+    .reminder-app button[value="clear-all"] {
+      display: block;
+      margin: 10px auto;
+      width: 350px; } }
+
+@media only screen and (max-width: 420px) {
+  .reminder-app .add-reminder > form > input {
+    width: 300px; }
+  .reminder-app .reminder-list {
+    width: 300px; }
+  .reminder-app button[value="clear-all"] {
+    width: 300px; } }
