@@ -1,74 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-let text;
-let dueDate;
-
-const AddReminder = ({addReminder}) => (
-    <div className="add-reminder">
-        <form 
-            action="submit" 
-            onSubmit={e => {
-                e.preventDefault()
-                addReminder(text,dueDate)
-                }}
-            >
-            <input 
-                type="text" placeholder="I have to..." 
-                onChange={e => text=e.target.value}
-                maxLength="30" 
-                required
-                />
-            <input 
-                placeholder="on.."
-                type="datetime-local"
-                onChange={e => dueDate=e.target.value}
-                />
-            <input type="submit" value="Add Reminder"/>
-        </form>
-    </div>
-)
-
-
-/*
 class AddReminder extends Component {
     constructor(props) {
         super(props)
         this.state= {
-            text: "",
-            dueDate: ""
+            reminder: "",
+            date: "",
         }
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this) 
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
+    handleSubmit(e) {
+        e.preventDefault()
+        this.props.addReminder(this.state.reminder,this.state.date)
+        this.setState({
+             reminder: "",
+             date: ""
+            }) 
     }
-    render() {console.log("render")
+
+    handleInputChange(e) {
+        e.preventDefault()
+        const name = e.target.name
+        const value = e.target.value
+        this.setState({
+            [name] : value
+        })
+    }
+
+    render() {
         return (
             <div className="add-reminder">
-                <form 
-                  action="submit" 
-                  onSubmit={e => {
-                      e.preventDefault()
-                      this.props.addReminder(this.state.text,this.state.dueDate)
-                      }}
-                >
+                <form action="submit" onSubmit={this.handleSubmit} >
                     <input 
-                      type="text" placeholder="I have to..." 
-                      onChange={e => this.setState({text:e.target.value})} 
-                      required
+                        type="text" placeholder="I have to..."
+                        autoComplete="off" autoCorrect="off" spellCheck="false"
+                        value={this.state.reminder} name="reminder"
+                        onChange={this.handleInputChange} 
+                        required
                       />
                     <input 
-                      type="datetime-local"
-                      onChange={e => this.setState({dueDate:e.target.value})}
-                    />
+                        type="datetime-local"
+                        value={this.state.date}
+                        name="date"
+                        onChange={this.handleInputChange}
+                      />
                     <input type="submit" value="Add Reminder"/>
                 </form>
             </div>
         );
     }
 }
-*/
+
 
 
 export default AddReminder;

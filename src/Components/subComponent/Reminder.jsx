@@ -1,8 +1,7 @@
 import React from 'react';
 
 
-
-const Reminder = ({text="", timeLeft="", onClick}) => (
+const Reminder = ({text, timeLeft, onClick}) => (
     <div className="reminder"> 
         <div className="close" onClick={onClick}><small>X</small></div>
         <div>{text}</div>
