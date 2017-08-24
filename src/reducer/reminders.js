@@ -1,9 +1,9 @@
 
 //returns plain js object
-const reminder = ({id,text,dueDate}) => ({
+const reminder = ({id,text,dueDate=""}) => ({
     id,
     text,
-    dueDate,
+    dueDate
 }) 
 
 // reducer
