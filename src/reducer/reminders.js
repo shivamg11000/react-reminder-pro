@@ -1,18 +1,9 @@
 
-import moment from 'moment';
-
-const timeLeft = (dueDate="") => {
-    if(moment(dueDate).fromNow() === "Invalid date" )
-        return ""
-    return moment(dueDate).fromNow()
-}
-
 //returns plain js object
 const reminder = ({id,text,dueDate=""}) => ({
     id,
     text,
-    dueDate,
-    timeLeft: timeLeft(dueDate)
+    dueDate
 }) 
 
 // reducer
